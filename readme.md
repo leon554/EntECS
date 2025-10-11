@@ -95,7 +95,7 @@ ecs.removeSingletonComponent(GameDifficulty)
 ```
 
 ## Systems
-In entECS, systems take the form of functions with two input parameters — `deltaTime` and the calling ECS instance. To create systems in a more declarative way, we can also use the `createSystem` function.
+In entECS, systems take the form of functions with two input parameters, `deltaTime` and the calling ECS instance. To create systems in a more declarative way, we can also use the `createSystem` function.
 ```typescript
 function moveSystem(deltaTime: number, ecs: ECS) {
     const components = ecs.queryComponents([Position, Velocity])
