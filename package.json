@@ -1,0 +1,24 @@
+{
+  "name": "entecs",
+  "version": "0.0.1",
+  "description": "A simple type script oriented ECS system",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/leon554/ECSLib"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "Entity Component System",
+    "ECS"
+  ],
+  "author": "Leon Smit",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  }
+}
