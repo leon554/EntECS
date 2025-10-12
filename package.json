@@ -1,12 +1,12 @@
 {
   "name": "entecs",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "A simple type script oriented ECS system",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/leon554/ECSLib"
+    "url": "https://github.com/leon554/EntECS"
   },
   "scripts": {
     "build": "tsup"
