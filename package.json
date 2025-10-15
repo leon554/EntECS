@@ -1,6 +1,6 @@
 {
   "name": "entecs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A simple type script oriented ECS system",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
