@@ -63,6 +63,10 @@ export class ECS{
        return ids
     }
 
+    getActiveEntities(){
+        return this.idManager.getActiveIds()
+    }
+
     private getComponentStore<T>(componentClass: new (...args: any[]) => T): SparseSet<T> {
         let store =  this.componentStores.get(componentClass);
         if (!store) {
