@@ -101,13 +101,13 @@ export class ECS{
         if(!instance) return null
         return instance
     }
-    getEntityComponents(entityId: EntityId){
-        const sparseSets = this.componentStores.values()
+    getComponentsForEntity(entityId: EntityId){
         const components: any[] = []
-        for(const set of sparseSets){
+        for(const set of this.componentStores.values()){
             const component = set.get(entityId)
             component && components.push()
         }
+        return components
     }
     hasComponent<T>(entity: EntityId, componentClass: new (...args: any[]) => T): boolean {
         return this.componentStores.get(componentClass)?.has(entity) ?? false;
@@ -186,14 +186,6 @@ export class ECS{
 
     getComponents<T>(className: new (...args: any) => T): T[]{
         return this.getComponentStore(className).values()
-    }
-    getComponentsForEntity(entityId: EntityId){
-        const components: Function[] = []
-        for(const store of Array.from(this.componentStores.values())){
-            if(!store.has(entityId)) continue
-            components.push(store.get(entityId))
-        }
-        return components
     }
 
 
