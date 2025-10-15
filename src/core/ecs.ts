@@ -97,7 +97,14 @@ export class ECS{
         if(!instance) return null
         return instance
     }
-
+    getEntityComponents(entityId: EntityId){
+        const sparseSets = this.componentStores.values()
+        const components: any[] = []
+        for(const set of sparseSets){
+            const component = set.get(entityId)
+            component && components.push()
+        }
+    }
     hasComponent<T>(entity: EntityId, componentClass: new (...args: any[]) => T): boolean {
         return this.componentStores.get(componentClass)?.has(entity) ?? false;
     }
