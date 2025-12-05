@@ -19,6 +19,16 @@ export class EventBus{
         this.events.push({eventInstance, priority})
     }
 
+    emitAndDispatch<T extends object>(eventInstance: T){
+        const eventClass = eventInstance.constructor as EventType<T>
+        const callbacks = this.listeners.get(eventClass) as EventCallBack<T>[] | undefined
+
+        if (!callbacks) return
+        for (const callback of callbacks) {
+            callback(eventInstance)
+        }
+    }
+
     dispatch(){
         if(this.enableEventPriority){
             this.events.sort((a, b) => b.priority - a.priority)

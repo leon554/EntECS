@@ -33,6 +33,7 @@ export class ECS{
     private eventBus = new EventBus()
     on = this.eventBus.on.bind(this.eventBus);
     emit = this.eventBus.emit.bind(this.eventBus);
+    emitAndDispatch = this.eventBus.emitAndDispatch.bind(this.eventBus)
 
     private engineEventBus = new EventBus()
     onEngineEvent = this.engineEventBus.on.bind(this.engineEventBus)
